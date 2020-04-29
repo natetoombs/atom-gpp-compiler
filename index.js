@@ -243,7 +243,7 @@ function treeCompile(e, gdb) {
     map((element) => element.getAttribute("data-path"));
 
   // file right clicked on
-  let element = e.target;
+  let element = document.querySelector(".tree-view .file.selected > .name");//e.target;
 
   if (element.classList.contains("file")) {
     element = element.firstChild;
