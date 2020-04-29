@@ -25,6 +25,11 @@ module.exports = {
         "gpp-compiler:gdb": () => {
           debug("gpp-compiler:gdb");
           compileFile(getFileType(), true);
+        },
+        "gpp-compiler:tree-compile": treeCompile,
+        "gpp-compiler:tree-gdb": (e) => {
+          debug("gpp-compiler:tree-gdb");
+          treeCompile(e, true);
         }
       }));
     this.subscriptions.add(atom.
