@@ -41,6 +41,23 @@ module.exports = {
           treeCompile(e, true);
         }
       }));
+      this.subscriptions.add(atom.
+        commands.
+        add("atom-workspace", {
+          "gpp-compiler:tree-compile": treeCompile,
+          "gpp-compiler:tree-gdb": (e) => {
+            debug("gpp-compiler:tree-gdb");
+            treeCompile(e, true);
+          },
+          "gpp-compiler:compile": () => {
+            debug("gpp-compiler:compile");
+            compileFile(getFileType());
+          },
+          "gpp-compiler:gdb": () => {
+            debug("gpp-compiler:gdb");
+            compileFile(getFileType(), true);
+          }
+        }));
   },
   config: {
     addCompilingErr: {
