@@ -16,32 +16,6 @@ module.exports = {
     this.subscriptions = new CompositeDisposable();
 
     this.subscriptions.add(atom.
-      commands.
-      add("atom-text-editor", {
-        "gpp-compiler:compile": () => {
-          debug("gpp-compiler:compile");
-          compileFile(getFileType());
-        },
-        "gpp-compiler:gdb": () => {
-          debug("gpp-compiler:gdb");
-          compileFile(getFileType(), true);
-        },
-        "gpp-compiler:tree-compile": treeCompile,
-        "gpp-compiler:tree-gdb": (e) => {
-          debug("gpp-compiler:tree-gdb");
-          treeCompile(e, true);
-        }
-      }));
-    this.subscriptions.add(atom.
-      commands.
-      add(".tree-view .file", {
-        "gpp-compiler:tree-compile": treeCompile,
-        "gpp-compiler:tree-gdb": (e) => {
-          debug("gpp-compiler:tree-gdb");
-          treeCompile(e, true);
-        }
-      }));
-    this.subscriptions.add(atom.
         commands.
         add("atom-workspace", {
           "gpp-compiler:tree-compile": treeCompile,
