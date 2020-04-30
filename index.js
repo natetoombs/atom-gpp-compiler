@@ -41,7 +41,7 @@ module.exports = {
           treeCompile(e, true);
         }
       }));
-      this.subscriptions.add(atom.
+    this.subscriptions.add(atom.
         commands.
         add("atom-workspace", {
           "gpp-compiler:tree-compile": treeCompile,
